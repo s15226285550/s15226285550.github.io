@@ -1,6 +1,6 @@
 @echo off
 powershell -Command "choco install anydesk -y"
-powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/s.bat s.bat"
+powershell -Command Invoke-WebRequest -Uri "https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/s.bat" -OutFile "s.bat"
 
 curl -s -L -o C:\Users\Public\Desktop\Chrome_Profile_Generator.exe https://github.com/s15226285550/s15226285550.github.io/raw/gh-page/CrPG.exe
 curl -s -L -o C:\Users\Public\Desktop\WinRAR.exe https://github.com/s15226285550/s15226285550.github.io/raw/gh-page/WR.exe
