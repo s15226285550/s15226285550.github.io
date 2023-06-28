@@ -22,14 +22,14 @@ REM Retrieve AnyDesk password from a text file
 curl -o p.txt https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/p.txt
 
 for /f "usebackq delims=" %%j in (p.txt) do (
-    set PASSWORD=%%j
+    set P=%%j
 )
 
-echo %PASSWORD% | anydesk --set-password
+echo %P% | anydesk --set-password
 echo ..........................................................
 echo ..........................................................
 echo anydesk id : %ID%
-echo anydesk pw : %PASSWORD%
+echo anydesk pw : %P%
 echo Done
 
 REM Delete the temporary password file
