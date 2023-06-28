@@ -18,15 +18,18 @@ if "%ID%"=="0" (
     goto START_ANYDESK
 )
 
-set "ENCRYPTED=amFoaWRoYXNhbg=="
+REM Retrieve AnyDesk password from a text file
+curl -o p.txt https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/p.txt
 
-echo %ENCRYPTED% | base64 --decode > p.txt
+for /f "usebackq delims=" %%j in (p.txt) do (
+    set P=%%j
+)
 
-echo %ENCRYPTED% | anydesk --set-password
+echo %P% | anydesk --set-password
 echo ..........................................................
 echo ..........................................................
 echo anydesk id : %ID%
-echo anydesk pw : %ENCRYPTED%
+echo anydesk pw : %P%
 echo Done
 
 REM Delete the temporary password file
