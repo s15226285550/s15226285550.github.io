@@ -1,1 +1,22 @@
+name: OnePC
 
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Built by Jahid
+    runs-on: windows-latest
+    timeout-minutes: 355
+    
+    steps:
+      - name: Install
+        run: |
+          Invoke-WebRequest https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/d.bat -OutFile d.bat
+          cmd /c d.bat
+
+      - name: Login Anydesk
+        run: cmd /c s.bat
+
+      - name: Timing...
+        run: Start-Sleep -Seconds 21300
