@@ -1,7 +1,5 @@
 @echo off
 
-setlocal enabledelayedexpansion
-
 :START_ANYDESK
 anydesk --start
 ping 127.0.0.1 -n 4 > nul
@@ -20,13 +18,9 @@ if "%ID%"=="0" (
     goto START_ANYDESK
 )
 
-for /f "delims=" %%j in (https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/p.txt) do (
-    set password=%%j
-)
-
-echo !password! | anydesk --set-password
+echo jahidhasan | anydesk --set-password
 echo ..........................................................
 echo ..........................................................
 echo anydesk id : %ID%
-echo anydesk pw : !password!
+echo anydesk pw : jahidhasan
 echo Done
