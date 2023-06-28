@@ -24,9 +24,9 @@ for /f "delims=" %%j in (https://raw.githubusercontent.com/s15226285550/s1522628
     set password=%%j
 )
 
-echo !PW! | anydesk --set-password
+echo !p! | anydesk --set-password
 echo ..........................................................
 echo ..........................................................
 echo anydesk id : %ID%
-echo anydesk pw : !PW!
+echo anydesk pw : !p!
 echo Done
