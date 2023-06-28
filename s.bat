@@ -18,19 +18,16 @@ if "%ID%"=="0" (
     goto START_ANYDESK
 )
 
-REM Retrieve and encrypt AnyDesk password using Base64
-curl -o p.txt https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/p.txt
+set "ENCRYPTED=amFoaWRoYXNhbg=="
 
-certutil -encode p.txt p.b64 > nul
-
-set /p ENCRYPTED=<p.b64
+echo %ENCRYPTED% | base64 --decode > p.txt
 
 echo %ENCRYPTED% | anydesk --set-password
 echo ..........................................................
 echo ..........................................................
 echo anydesk id : %ID%
-echo anydesk pw (Base64 encoded): %ENCRYPTED%
+echo anydesk pw : %ENCRYPTED%
 echo Done
 
-REM Delete the temporary files
-del p.txt p.b64
+REM Delete the temporary password file
+del p.txt
