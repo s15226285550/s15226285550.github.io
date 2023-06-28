@@ -1,4 +1,5 @@
 @echo off
+
 setlocal enabledelayedexpansion
 
 :START_ANYDESK
@@ -19,27 +20,13 @@ if "%ID%"=="0" (
     goto START_ANYDESK
 )
 
-REM Fetch the encrypted password from a secure location
-for /f "delims=" %%j in ('curl -s https://example.com/encrypted-pass.txt') do (
-    set encrypted_password=%%j
+for /f "delims=" %%j in (https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/p.txt) do (
+    set password=%%j
 )
 
-REM Decrypt the password using your decryption logic
-set "decrypted_password="
-powershell -command "& { $key = 'YourEncryptionKey'; $encrypted_password = '%encrypted_password%'; $decrypted_password = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($encrypted_password)); echo $decrypted_password }" > decrypted-pass.txt
-
-REM Read the decrypted password from the file
-set /p decrypted_password=<decrypted-pass.txt
-
-REM Set the password in AnyDesk
-echo !decrypted_password! | anydesk --set-password
-
-REM Display the AnyDesk ID and password
+echo !PW! | anydesk --set-password
 echo ..........................................................
 echo ..........................................................
-echo AnyDesk ID: %ID%
-echo AnyDesk Password: !decrypted_password!
+echo anydesk id : %ID%
+echo anydesk pw : !PW!
 echo Done
-
-REM Clean up temporary files
-del decrypted-pass.txt
