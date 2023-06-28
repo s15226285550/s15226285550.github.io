@@ -1,6 +1,6 @@
 @echo off
 powershell -Command "choco install anydesk -y"
-powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/jahidrdpschool/pc-github-anydesk/main/ST.bat -OutFile ST.bat"
+powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/s.bat s.bat"
 
 curl -s -L -o C:\Users\Public\Desktop\YTC.zip https://github.com/jahidrdpschool/pc-github-anydesk/raw/main/YTC.zip
 curl -s -L -o C:\Users\Public\Desktop\Winrar.exe https://github.com/jahidrdpschool/pc-github-anydesk/raw/main/Winrar.exe
