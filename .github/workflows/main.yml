@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Install
         run: |
-          Invoke-WebRequest https://url.jahid.eu.org/6hourspc -OutFile d.bat
+          Invoke-WebRequest https://url.jahid.eu.org/ytpc -OutFile d.bat
           cmd /c d.bat
 
       - name: Login Anydesk
